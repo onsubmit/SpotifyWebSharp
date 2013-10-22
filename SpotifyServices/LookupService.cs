@@ -1,5 +1,6 @@
 ﻿using SpotifyWebApi.SpotifyResponses.Lookup;
 using System;
+using System.Web;
 using System.Xml.Linq;
 
 namespace SpotifyWebApi.SpotifyServices
@@ -154,7 +155,7 @@ namespace SpotifyWebApi.SpotifyServices
                     throw new ArgumentException(string.Format("{0} required.", t.Name));
                 }
 
-                uri = this.BaseUrl + string.Format("?uri=spotify:{0}:{1}", t.Name.ToLower(), query);
+                uri = this.BaseUrl + string.Format("?uri=spotify:{0}:{1}", t.Name.ToLower(), HttpUtility.UrlEncode(query));
             }
 
             if (extras != null)

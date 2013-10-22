@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace SpotifyWebApi.SpotifyResponses.Lookup
 {
@@ -7,5 +8,30 @@ namespace SpotifyWebApi.SpotifyResponses.Lookup
     {
         [XmlElement("album")]
         public Response.BaseAlbum Album { get; set; }
+
+        /// <summary>
+        /// ID
+        /// </summary>
+        [XmlElement("id")]
+        public TrackId Id { get; set; }
+    }
+
+    /// <summary>
+    /// Deserialized object corresponding to a single track ID
+    /// </summary>
+    [Serializable]
+    public class TrackId
+    {
+        /// <summary>
+        /// Value
+        /// </summary>
+        [XmlText]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Type
+        /// </summary>
+        [XmlAttribute("type")]
+        public string Type { get; set; }
     }
 }

@@ -1,11 +1,7 @@
 ﻿using SpotifyWebApi.SpotifyResponses.Search;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace SpotifyWebApi.SpotifyServices
 {
@@ -91,7 +87,7 @@ namespace SpotifyWebApi.SpotifyServices
                 throw new NotSupportedException(string.Format("Type {0} not supported.", t));
             }
 
-            string uri = this.BaseUrl + string.Format("{0}?q={1}", endpoint, query);
+            string uri = this.BaseUrl + string.Format("{0}?q={1}", endpoint, HttpUtility.UrlEncode(query));
 
             if (page != null)
             {
