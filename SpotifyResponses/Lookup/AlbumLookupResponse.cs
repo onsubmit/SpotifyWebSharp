@@ -9,7 +9,7 @@ namespace SpotifyWebApi.SpotifyResponses.Lookup
     {
         [XmlArray("tracks")]
         [XmlArrayItem("track")]
-        public List<Response.BaseTrack> Tracks { get; set; }
+        public List<ArtistTrack> Tracks { get; set; }
     }
 
     [Serializable]
