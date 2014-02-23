@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyResponses.Search
+namespace SpotifyWebSharp.SpotifyResponses.Search
 {
     /// <summary>
     /// Deserialized object corresponding to track search results

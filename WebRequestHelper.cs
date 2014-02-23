@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Net;
 
-namespace SpotifyWebApi
+namespace SpotifyWebSharp
 {
     /// <summary>
     /// Web request helper

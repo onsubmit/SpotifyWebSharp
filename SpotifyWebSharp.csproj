@@ -7,8 +7,8 @@
     <ProjectGuid>{CC443CFE-CD39-475C-9C68-2D8AE8E85046}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SpotifyApi</RootNamespace>
-    <AssemblyName>SpotifyApi</AssemblyName>
+    <RootNamespace>SpotifyWebSharp</RootNamespace>
+    <AssemblyName>SpotifyWebSharp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

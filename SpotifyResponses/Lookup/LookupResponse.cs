@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyResponses.Lookup
+namespace SpotifyWebSharp.SpotifyResponses.Lookup
 {
     public class Response
     {

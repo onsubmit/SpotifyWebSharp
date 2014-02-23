@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyResponses.Search
+namespace SpotifyWebSharp.SpotifyResponses.Search
 {
     /// <summary>
     /// Base deserialized object corresponding to search results

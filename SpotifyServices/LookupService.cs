@@ -1,9 +1,9 @@
-﻿using SpotifyWebApi.SpotifyResponses.Lookup;
+﻿using SpotifyWebSharp.SpotifyResponses.Lookup;
 using System;
 using System.Web;
 using System.Xml.Linq;
 
-namespace SpotifyWebApi.SpotifyServices
+namespace SpotifyWebSharp.SpotifyServices
 {
     /// <summary>
     /// Lookup service

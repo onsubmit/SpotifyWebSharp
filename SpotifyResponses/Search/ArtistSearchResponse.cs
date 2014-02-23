@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyResponses.Search
+namespace SpotifyWebSharp.SpotifyResponses.Search
 {
     /// <summary>
     /// Deserialized object corresponding to artist search results

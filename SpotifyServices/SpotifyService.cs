@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyServices
+namespace SpotifyWebSharp.SpotifyServices
 {
     /// <summary>
     /// Base service

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace SpotifyWebApi.SpotifyResponses.Lookup
+namespace SpotifyWebSharp.SpotifyResponses.Lookup
 {
     [XmlRootAttribute("artist", Namespace = "http://www.spotify.com/ns/music/1", IsNullable = false)]
     public class BaseRootArtist : Response.BaseArtist
