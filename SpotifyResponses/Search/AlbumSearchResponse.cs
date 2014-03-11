@@ -69,12 +69,6 @@ namespace SpotifyWebSharp.SpotifyResponses.Search
     public class SearchAlbum : Lookup.Response.BaseAlbum
     {
         /// <summary>
-        /// Href
-        /// </summary>
-        [XmlAttribute("href")]
-        public string Href { get; set; }
-
-        /// <summary>
         /// ID
         /// </summary>
         [XmlElement("id")]

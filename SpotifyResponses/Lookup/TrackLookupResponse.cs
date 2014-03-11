@@ -14,6 +14,12 @@ namespace SpotifyWebSharp.SpotifyResponses.Lookup
         /// </summary>
         [XmlElement("id")]
         public TrackId Id { get; set; }
+
+        /// <summary>
+        /// Href
+        /// Not actually retrieved when using the Lookup service but I'm adding the property so it can be set dynamically
+        /// </summary>
+        public string Href { get; set; }
     }
 
     /// <summary>

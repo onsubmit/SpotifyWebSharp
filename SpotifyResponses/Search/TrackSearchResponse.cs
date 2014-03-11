@@ -93,16 +93,10 @@ namespace SpotifyWebSharp.SpotifyResponses.Search
     public class SearchTrackAlbum : Lookup.Response.BaseAlbum
     {
         /// <summary>
-        /// Href
-        /// </summary>
-        [XmlAttribute("href")]
-        public string Href { get; set; }
-
-        /// <summary>
         /// Released year
         /// </summary>
         [XmlElement("released")]
-        public int? Released { get; set; }
+        public new int? Released { get; set; }
     }
 
     /// <summary>

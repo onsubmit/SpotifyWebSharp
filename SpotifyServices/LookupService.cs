@@ -101,7 +101,9 @@ namespace SpotifyWebSharp.SpotifyServices
         /// <returns>Artist</returns>
         public Artist LookupByHref(string artistHref, ArtistExtras artistExtras)
         {
-            return Lookup<Artist>(query: artistHref, directHref: true, extras: artistExtras == ArtistExtras.None ? null : artistExtras.ToString());
+            Artist artist = Lookup<Artist>(query: artistHref, directHref: true, extras: artistExtras == ArtistExtras.None ? null : artistExtras.ToString());
+            artist.Href = "spotify:artist:" + artistHref;
+            return artist;
         }
 
         /// <summary>
@@ -112,17 +114,21 @@ namespace SpotifyWebSharp.SpotifyServices
         /// <returns>Album</returns>
         public Album LookupByHref(string albumHref, AlbumExtras albumExtras)
         {
-            return Lookup<Album>(query: albumHref, directHref: true, extras: albumExtras == AlbumExtras.None ? null : albumExtras.ToString());
+            Album album = Lookup<Album>(query: albumHref, directHref: true, extras: albumExtras == AlbumExtras.None ? null : albumExtras.ToString());
+            album.Href = "spotify:album:" + albumHref;
+            return album;
         }
 
         /// <summary>
         /// Looks up a track from its href
         /// </summary>
         /// <param name="trackHref">Track href</param>
-        /// <returns>Artist</returns>
+        /// <returns>Track</returns>
         public Track LookupByHref(string trackHref)
         {
-            return Lookup<Track>(query: trackHref, directHref: true, extras: null);
+            Track track = Lookup<Track>(query: trackHref, directHref: true, extras: null);
+            track.Href = "spotify:track:" + trackHref;
+            return track;
         }
 
         /// <summary>

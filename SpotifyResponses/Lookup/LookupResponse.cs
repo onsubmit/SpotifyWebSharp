@@ -25,8 +25,18 @@ namespace SpotifyWebSharp.SpotifyResponses.Lookup
             [XmlElement("name")]
             public string Name { get; set; }
 
+            [XmlAttribute("href")]
+            public string Href { get; set; }
+
             [XmlElement("availability")]
             public Availability Availability { get; set; }
+
+            /// <summary>
+            /// Released year
+            /// Not actually retrieved when using the Lookup service but I'm adding the property so it can be set dynamically
+            /// </summary>
+            [XmlIgnore]
+            public int Released { get; set; }
         }
 
         [Serializable]

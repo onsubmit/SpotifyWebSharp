@@ -19,19 +19,22 @@ namespace SpotifyWebSharp.SpotifyResponses.Lookup
         [XmlArray("albums")]
         [XmlArrayItem("album")]
         public List<ArtistAlbum> Albums { get; set; }
+
+        /// <summary>
+        /// Href
+        /// Not actually retrieved when using the Lookup service but I'm adding the property so it can be set dynamically
+        /// </summary>
+        public string Href { get; set; }
     }
 
     [Serializable]
     public class ArtistAlbum : Response.BaseAlbum
     {
-        [XmlAttribute("href")]
-        public string Href { get; set; }
-
         [XmlElement("id")]
         public AlbumId Id { get; set; }
 
         [XmlElement("released")]
-        public int? Released { get; set; }
+        public new int? Released { get; set; }
 
         [XmlElement("artist")]
         public BaseRootArtist Artist { get; set; }

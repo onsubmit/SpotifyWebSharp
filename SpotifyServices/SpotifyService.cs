@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using System.Xml;
 using System.Xml.Linq;
@@ -93,6 +94,59 @@ namespace SpotifyWebSharp.SpotifyServices
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(T));
                     obj = serializer.Deserialize(reader) as T;
+                }
+            }
+
+            return obj;
+        }
+
+        /// <summary>
+        /// Serializes an object to XML string
+        /// </summary>
+        /// <typeparam name="T">Type of object to serialize</typeparam>
+        /// <param name="obj">Object to serialize</param>
+        /// <returns>XML representation of the object</returns>
+        public static string Serialize<T>(T obj) where T : class
+        {
+            using (StringWriter stringWriter = new StringWriter())
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                serializer.Serialize(stringWriter, obj);
+                return stringWriter.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Serializes an object to XML file
+        /// </summary>
+        /// <typeparam name="T">Type of object to serialize</typeparam>
+        /// <param name="obj">Object to serialize</param>
+        /// <param name="path">XML file to write</param>
+        public static void Serialize<T>(T obj, string path) where T : class
+        {
+            using (StreamWriter streamWriter = new StreamWriter(path))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
+                serializer.Serialize(streamWriter, obj);
+            }
+        }
+
+        /// <summary>
+        /// Deserializes an XML string to an object
+        /// </summary>
+        /// <typeparam name="T">Type of object to deserialize</typeparam>
+        /// <param name="xmlString">XML representation of object</param>
+        /// <returns>Deserialized object</returns>
+        public static T Deserialize<T>(string xmlString) where T : class
+        {
+            T obj = null;
+
+            if (!string.IsNullOrEmpty(xmlString))
+            {
+                using (StringReader stringReader = new StringReader(xmlString))
+                {
+                    XmlSerializer serializer = new XmlSerializer(typeof(T));
+                    obj = serializer.Deserialize(stringReader) as T;
                 }
             }
 
